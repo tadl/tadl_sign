@@ -1,0 +1,55 @@
+#events_div{
+	position: absolute;
+	bottom: 0;
+	height: 33%;
+	/*border-top: 1px solid #000;*/
+}
+
+#map_div{
+	position: absolute;
+	bottom: 33%;
+	height: 33%;
+	/*border-top: 1px solid #000;*/
+}
+
+.title{
+	font-size: 35px;
+}
+
+.event{
+	padding: 0px;
+	margin-bottom: 0px;
+	margin-top: 0px;
+}
+
+.event_left{
+	float: left;
+	font-size: 60px;
+	padding: 10px;
+}
+
+.event_right{
+	float: left;
+	padding: 10px;
+}
+
+.event_name{
+	font-size: 30px;
+	padding: 5px;
+	width: 920px;
+	white-space: nowrap;  
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}
+
+.event_details{
+	padding: 0px;
+	font-size: 25px;
+}
+
+.floorplan{
+	display: block;
+	width: 63%;
+	margin-right: auto;
+	margin-left: auto;
+}

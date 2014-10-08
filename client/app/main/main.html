@@ -1,0 +1,27 @@
+<div id="map_div">
+<img src="../assets/images/floorplan.png" class="floorplan">
+</div>
+
+<div id="events_div">
+  <span class="title">Meetings & Events </span>
+  <br>
+  <div class="event" ng-repeat="event in events | filter: only_current | limitTo: 5">
+    <div class="event_left" ng-style="event_color({{event}})">
+      <span ng-show="event.room == 'McGuire Room'">
+        <i class="fa fa-arrow-circle-left"></i>
+      </span>
+      <span ng-show="event.room != 'McGuire Room'">
+        <i class="fa fa-arrow-circle-up"></i>
+      </span>
+    </div>
+    <div class="event_right" ng-style="event_color({{event}})">  
+      <div class="event_name">{{event.name}}</div>
+      <div class="event_details">  
+         	 {{event.day}} from {{event.start_time}} to {{event.end_time}} - {{event.room}}
+      </div>
+    </div>
+    <div style="clear:both"></div> 
+  </div>
+</div>
+
+
