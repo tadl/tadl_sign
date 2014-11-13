@@ -1,25 +1,58 @@
 #events_div{
 	position: absolute;
 	bottom: 0;
-	height: 33%;
+	height: 32%;
 	/*border-top: 1px solid #000;*/
 }
 
 #map_div{
 	position: absolute;
-	bottom: 33%;
-	height: 33%;
+	bottom: 32%;
+	height: 53%;
 	/*border-top: 1px solid #000;*/
+	/*border-bottom: 1px solid #000;*/
+}
+
+#welcome_div{
+	position: absolute;
+	top: 0;
+	height: 5%;
+	width: 100%;
+	margin: 0;
+	background-color: #1976D2;
+	box-shadow: 0px 5px 2px #888888;
+}
+
+#faq_div{
+	position: absolute;
+	top: 6%;
+	margin: 0;
+	width: 100%;
+}
+
+#welcome_div span {
+	font-size: 65px;
+	color: #fff;
+	margin: 10px;
+	
 }
 
 .title{
 	font-size: 35px;
+	margin-bottom: 0px;
+	margin-left: 5px;
+}
+
+.faq{
+	font-size: 55px;
+	text-align: center;
+	font-weight: bold;
 }
 
 .event{
 	padding: 0px;
-	margin-bottom: 0px;
-	margin-top: 0px;
+	margin-bottom: 5px;
+	margin-top: 5px;
 }
 
 .event_left{
@@ -49,7 +82,7 @@
 
 .floorplan{
 	display: block;
-	width: 63%;
+	width: 100%;
 	margin-right: auto;
 	margin-left: auto;
 }

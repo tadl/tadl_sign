@@ -1,10 +1,22 @@
+<div id="welcome_div">
+  <span>Welcome to Woodmere</span>
+</div>
+<div id="faq_div">
+  <div class="title">
+    Find What You're Looking For: 
+  </div>  
+    </br>
+  <div class="faq">  
+    {{displayed_faq}}
+  </div>
+</div>
 <div id="map_div">
-<img src="../assets/images/floorplan.png" class="floorplan">
+  <img src="../assets/images/tadl_map.jpg" class="floorplan">
 </div>
 
 <div id="events_div">
-  <span class="title">Meetings & Events </span>
-  <br>
+  <div class="title">Meetings & Events: </div>
+
   <div class="event" ng-repeat="event in events | filter: only_current | limitTo: 5">
     <div class="event_left" ng-style="event_color({{event}})">
       <span ng-show="event.room == 'McGuire Room'">

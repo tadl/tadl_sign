@@ -9,6 +9,28 @@ angular.module('tadlSignApp')
     	$timeout(moving_time, 1000)
     }
 
+    var faqs_hash = [
+        ['Get Your Library Card'],
+        ['Pick Up Holds'],
+        ['Return Items'],
+        ['Public Computers'],
+        ['Movie and Music Collection'],
+        ['Story Room'],
+        ['Audio Book Collection']
+    ];
+
+    var display_faq = function(position){
+        var i = faqs_hash.length
+        if(position < i){
+            $scope.displayed_faq = faqs_hash[position][0]
+            position ++
+        }else{
+            $scope.displayed_faq = faqs_hash[0][0]
+            position = 1
+        }
+        $timeout(function() {display_faq(position)}, 5000);
+    }
+
 
 
     $scope.only_current = function(event){
@@ -26,12 +48,18 @@ angular.module('tadlSignApp')
     	}
     }
     
-
-    $http.get('http://railsbox-1-40317.use1.nitrousbox.com/events/all?days_from_now=4').success(
+    var fetch_events = function(){
+    	$http.get('http://railsbox-1-40317.use1.nitrousbox.com/events/list?days_to_show=4').success(
     	function(data) {
-      $scope.events = data.events;
-    });
+      		$scope.events = data.events;
+            $timeout(fetch_events, 300000)
+    	});
+    }
+    
+
 
     $timeout(moving_time, 1000)
+    fetch_events()
+    $timeout(display_faq, 1000)
 
   });
