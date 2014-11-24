@@ -29,7 +29,14 @@
     <div class="event_right" ng-style="event_color({{event}})">  
       <div class="event_name">{{event.name}}</div>
       <div class="event_details">  
-         	 {{event.day}} from {{event.start_time}} to {{event.end_time}} - {{event.room}}
+         	 {{event.day}}
+          <span ng-if="event.all_day != 'true'">
+            from {{event.start_time}} to {{event.end_time}} 
+          </span>
+          <span ng-if="event.all_day == 'true'">
+            - All Day
+          </span>
+           - {{event.room}} 
       </div>
     </div>
     <div style="clear:both"></div> 
