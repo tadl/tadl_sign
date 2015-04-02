@@ -10,25 +10,42 @@ angular.module('tadlSignApp')
     }
 
     var faqs_hash = [
-        ['Get Your Library Card'],
-        ['Pick Up Holds'],
-        ['Return Items'],
-        ['Public Computers'],
-        ['Movie and Music Collection'],
-        ['Story Room'],
-        ['Audio Book Collection']
+        ['Get Your Library Card',[[360,763]]],
+        ['Pick Up Holds',[[400, 705]]],
+        ['Return Items',[[541,791]]],
+        ['Public Computers',[[518,377],[246,793]]],
+        ['Movie and Music Collection',[[100,500]]],
+        ['Story Room',[[200,400]]],
+        ['Audio Book Collection',[[300,100]]]
     ];
+
+    var pointer_image = new Image();
+    pointer_image.src = '../assets/images/point.png';
+    pointer_image.onload = function() {
+        init();
+    }
 
     var display_faq = function(position){
         var i = faqs_hash.length
         if(position < i){
             $scope.displayed_faq = faqs_hash[position][0]
+            // draw_points(faqs_hash[position][1])
             position ++
         }else{
             $scope.displayed_faq = faqs_hash[0][0]
+            // draw_points(faqs_hash[0][1])
             position = 1
         }
-        $timeout(function() {display_faq(position)}, 5000);
+        $timeout(function() {display_faq(position)}, 8000);
+    }
+
+    var draw_points = function(locations){
+        var canvas = document.getElementById('map_canvas'),
+        context = canvas.getContext('2d');
+        context.clearRect(0, 0, canvas.width, canvas.height)
+        locations.forEach( function(entry){
+            context.drawImage(pointer_image, entry[0], entry[1], 65, 100);
+        });
     }
 
 

@@ -1,7 +1,7 @@
 <div id="welcome_div">
   <span>Welcome to Woodmere</span>
 </div>
-<div id="faq_div">
+<!-- <div id="faq_div">
   <div class="title">
     Find What You're Looking For: 
   </div>  
@@ -9,9 +9,12 @@
   <div class="faq">  
     {{displayed_faq}}
   </div>
-</div>
+</div> -->
 <div id="map_div">
-  <img src="../assets/images/tadl_map.jpg" class="floorplan">
+  <div id="map_container">
+    <img src="../assets/images/floorplan.png" class="floorplan">
+    <canvas id="map_canvas" width="1050" height="1091"></canvas>
+  </div>
 </div>
 
 <div id="events_div">
