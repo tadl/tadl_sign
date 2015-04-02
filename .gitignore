@@ -1,6 +1,5 @@
 node_modules
 public
 .tmp
-.idea
-dist
+.ideax
 /server/config/local.env.js
